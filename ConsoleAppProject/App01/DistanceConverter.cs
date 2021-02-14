@@ -14,6 +14,8 @@ namespace ConsoleAppProject.App01
 
         public const int MILES_IN_FEET = 5200;
 
+        public const int MILES_IN_METRES = 5200;
+
         private double miles;
        
         private double feet;
@@ -30,6 +32,11 @@ namespace ConsoleAppProject.App01
             InputFeet();
             CalculateMiles();
             OutputMiles();
+            CalculateMeters();
+            OutputMeters();
+            InputMeters();
+
+
 
         }
         
@@ -96,6 +103,34 @@ namespace ConsoleAppProject.App01
             InputMiles();
 
             miles = feet / MILES_IN_FEET;
+
+            OutputFeet();
+        }
+
+        private void InputMeters()
+        {
+            Console.Write("Please enter the number of meters >");
+            string value = Console.ReadLine();
+            feet = Convert.ToDouble(value);
+
+        }
+
+        private void CalculateMeters()
+        {
+            meters = miles / 0.00062137;
+        }
+
+        private void OutputMeters()
+        {
+            Console.WriteLine(miles + " miles is " + meters + " metres ");
+        }
+
+        public void ConvertMilesToMetres()
+        {
+            OutputHeading();
+            InputMiles();
+
+            meters = miles / METERS_IN_MILES;
 
             OutputFeet();
         }
