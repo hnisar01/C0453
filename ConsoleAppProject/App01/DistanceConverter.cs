@@ -10,15 +10,18 @@ namespace ConsoleAppProject.App01
     /// Hassan Nisar
     public class DistanceConverter
     {
+        public const int FEET_IN_MILES = 5200;
+        
         private double miles;
        
         private double feet;
         
         /// <summary>
-        /// 
+        /// This method will run all the method that are listed below
         /// </summary>
         public void Run()
         {
+            OutputHeading();
             InputMiles();
             CalculateFeet();
             OutputFeet();
@@ -41,8 +44,8 @@ namespace ConsoleAppProject.App01
         /// Input the miles as a double number
         /// </summary> 
         private void CalculateFeet()
-        { 
-
+        {
+            feet = miles * 5280;
         }
 
         /// <summary>
@@ -50,7 +53,27 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputFeet()
         {
-        
+            Console.WriteLine(miles + " miles is " + feet + " feet ");
+        }
+
+        public void ConvertMilesToFeet()
+        {
+            OutputHeading();
+            InputMiles();
+
+            feet = miles * FEET_IN_MILES;
+
+            OutputFeet();
+        }
+
+        private void OutputHeading()
+        {
+            Console.WriteLine();
+            Console.WriteLine(" -------------------------");
+            Console.WriteLine("  Convert Miles to Feet   ");
+            Console.WriteLine("    By Hassan Nisar       ");
+            Console.WriteLine(" -------------------------");
+            Console.WriteLine();
         }
     }
 }
