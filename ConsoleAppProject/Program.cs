@@ -23,7 +23,7 @@ namespace ConsoleAppProject
 
             DistanceConverter converter = new DistanceConverter();
 
-            converter.ConverttoDistance();
+            converter.Run();
         }
     }
 }

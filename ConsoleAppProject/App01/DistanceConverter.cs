@@ -25,9 +25,6 @@ namespace ConsoleAppProject.App01
         private double fromDistance;
         private double toDistance;
 
-        private double feet;
-        private double meters;
-
         private string fromUnit;
         private string toUnit;
 
@@ -44,20 +41,11 @@ namespace ConsoleAppProject.App01
         /// <summary>
         /// This method will run all the method that are listed below
         /// </summary>
+
         public void Run()
         {
-            OutputHeading();
-            InputDistance();
-            CalculateFeet();
-            CalculateMiles();
-            CalculateMeters();
-
-        }
-
-        public void ConverttoDistance()
-        {
             fromUnit = SelectUnit(" Please select the from distance unit > ");
-            toUnit = SelectUnit(" Please select  the to distancd unit");
+            toUnit = SelectUnit(" Please select  the to distance unit");
             
             OutputHeading();
 
@@ -65,16 +53,16 @@ namespace ConsoleAppProject.App01
 
             fromDistance = InputDistance($"Please enter the number of {fromUnit}  > ");
 
-            CalculateDistance();
+            CalculatetoDistance();
 
-            OutputDistance();
+            OutputtoDistance();
         }
 
-        private void CalculateDistance()
+        private void CalculatetoDistance()
         {
             if (fromUnit == MILES && toUnit == FEET)
-            { 
-            toDistance = fromDistance * FEET_IN_MILES
+            {
+                toDistance = fromDistance * FEET_IN_MILES;
             }
             else if (fromUnit == FEET && toUnit == MILES)
             {
@@ -102,7 +90,7 @@ namespace ConsoleAppProject.App01
         {
             string choice = DisplayChoices(prompt);
             
-            string unit = Execute(choice);
+            string unit = ExecuteChoice(choice);
             Console.WriteLine($" You have chosen {unit}");
             return unit;
          }
@@ -125,7 +113,7 @@ namespace ConsoleAppProject.App01
             return null;
         }
 
-        private static string NewMethod(string prompt)
+        private static string DisplayChoices(string prompt)
         {
             Console.WriteLine();
             Console.WriteLine($" 1. {FEET}");
@@ -150,31 +138,13 @@ namespace ConsoleAppProject.App01
 
         }
         
-        /// <summary>
-        /// Prompt the user to enter the distance in feet
-        /// Input the miles as a double number
-        /// </summary> 
-        private void CalculateFeet()
-        {
-            feet = miles * 5280;
-        }
-
-        private void CalculateMiles()
-        {
-            miles = feet / 5280;
-        }
-
-        private void CalculateMeters()
-        {
-            meters = miles / 0.00062137;
-        }
 
 
 
         /// <summary>
         /// Prompt the app to output the distance in feet
         /// </summary>
-        private void OutputDistance()
+        private void OutputtoDistance()
             
         {
             Console.WriteLine($"\n {fromDistance} {fromUnit}" +
