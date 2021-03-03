@@ -14,6 +14,14 @@ namespace ConsoleAppProject.App02
         public const string METRIC = "Metric";
 
         public double Inches { get; set; }
+        public double Kilograms { get; set; }
+        public double Pounds { get; set; }
+        public double Feet { get; set; }
+        public double Stones { get; set; }
+        public double Centimeters { get; set; }
+        public double Meters { get; set; }
+
+        public double Index { get; set; }
 
         //all variables feet,inches,kg,stones,pounds
 
@@ -45,7 +53,6 @@ namespace ConsoleAppProject.App02
             string choice = SelectUnit("Please enter your choice");
             ExecuteChoice(choice);
 
-            CalculateBMI();
         }
 
         private string SelectUnit(string prompt)
@@ -57,7 +64,7 @@ namespace ConsoleAppProject.App02
             return unit;
         }
 
-        private static string ExecuteChoice(string choice)
+        private string ExecuteChoice(string choice)
         {
             if (choice.Equals("1"))
             {
@@ -75,35 +82,41 @@ namespace ConsoleAppProject.App02
             return null;
         }
 
-        private static void CalculateMetricBMI()
+        private void CalculateMetricBMI() => Index = Kilograms / Centimeters * Centimeters;
+
+        private void CalculateImperialBMI() => Index = Pounds / Inches * Inches;
+        
+        private void OutputBMI()
         {
-            //BMI = (kg) / (height)2;
+            Console.WriteLine($"\n Your BMI Index is {Index}");
+            if (Index < 18.50) 
+            {
+                Console.WriteLine("You are underweight");
+            }
         }
 
-        private static void OutputBMI()
+        private void InputMetricValues()
         {
-            throw new NotImplementedException();
+            Console.Write("please enter your weight in kg");
+            string value = Console.ReadLine();
+            Kilograms = Convert.ToDouble(value);
+
+            Console.Write("please enter your height in centimeters");
+            value = Console.ReadLine();
+            Centimeters = Convert.ToDouble(value);
+            Meters = Centimeters / 100;
+
         }
 
-        private static void CalculateImperialBMI()
+        private void InputImperialValues()
         {
-            // BMI = (weight in pounds) x 703 / (height in inches)2;
-        }
+            Console.Write("please enter your weight in Pounds");
+            string value = Console.ReadLine();
+            Pounds = Convert.ToDouble(value);
 
-        private static void InputMetricValues()
-        {
-
-        }
-
-        private static void InputImperialValues()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void CalculateBMI()
-        {
-            //BMI = (weight in kg) / (height in metres)2
-
+            Console.Write("please enter your height in Inches");
+            value = Console.ReadLine();
+            Inches = Convert.ToDouble(value);
         }
 
         public void OutputMessage()
