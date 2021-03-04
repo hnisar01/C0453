@@ -41,7 +41,6 @@ namespace ConsoleAppProject.App01
         /// <summary>
         /// This method will run all the method that are listed below
         /// </summary>
-
         public void Run()
         {
             fromUnit = SelectUnit(" Please select the from distance unit > ");
@@ -58,6 +57,9 @@ namespace ConsoleAppProject.App01
             OutputtoDistance();
         }
 
+        /// <summary>
+        /// This method is to calculate the the distance conversion
+        /// </summary>
         private void CalculatetoDistance()
         {
             if (fromUnit == MILES && toUnit == FEET)
@@ -86,6 +88,11 @@ namespace ConsoleAppProject.App01
             }
         }
 
+        /// <summary>
+        /// This method helps the user to choose the unit
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <returns></returns>
         private string SelectUnit(string prompt)
         {
             string choice = DisplayChoices(prompt);
@@ -95,6 +102,11 @@ namespace ConsoleAppProject.App01
             return unit;
          }
 
+        /// <summary>
+        /// This method exectutes the choice the user decides to utilise
+        /// </summary>
+        /// <param name="choice"></param>
+        /// <returns></returns>
         private static string ExecuteChoice(string choice)
         {
             if (choice.Equals("1"))
@@ -113,6 +125,11 @@ namespace ConsoleAppProject.App01
             return null;
         }
 
+        /// <summary>
+        /// This method displays the choices for the user
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <returns></returns>
         private static string DisplayChoices(string prompt)
         {
             Console.WriteLine();
@@ -151,6 +168,9 @@ namespace ConsoleAppProject.App01
                 $" is {toDistance} {toUnit}!\n");
         }
         
+        /// <summary>
+        /// This method displays the heading for the user
+        /// </summary>
         private void OutputHeading()
         {
             Console.WriteLine();

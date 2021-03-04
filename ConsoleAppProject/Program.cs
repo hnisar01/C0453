@@ -22,11 +22,12 @@ namespace ConsoleAppProject
             Console.WriteLine("BNU CO453 Applications Programming 2020-2021!");
             Console.WriteLine();
 
-            //DistanceConverter converter = new DistanceConverter();
-            BMI bmi = new BMI();
+            DistanceConverter converter = new DistanceConverter();
+            //BMI bmi = new BMI();
 
-            //converter.Run();
-            bmi.Run();
+            converter.Run();
+
+           //bmi.Run();
         }
     }
 }
