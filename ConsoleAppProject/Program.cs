@@ -23,11 +23,11 @@ namespace ConsoleAppProject
             Console.WriteLine();
 
             DistanceConverter converter = new DistanceConverter();
-            //BMI bmi = new BMI();
+            BMI bmi = new BMI();
 
-            converter.Run();
+            //converter.Run();
 
-           //bmi.Run();
+            bmi.Run();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleAppProject.Helpers;
 
 namespace ConsoleAppProject.App02
 {
@@ -26,18 +27,6 @@ namespace ConsoleAppProject.App02
         //all variables feet,inches,kg,stones,pounds
 
         /// <summary>
-        /// This method outputs the heading for the user
-        /// </summary>
-        private void OutputHeading()
-        {
-            Console.WriteLine();
-            Console.WriteLine(" -------------------------");
-            Console.WriteLine("   Body Mass Index Calculator      ");
-            Console.WriteLine("    By Hassan Nisar       ");
-            Console.WriteLine(" -------------------------");
-        }
-
-        /// <summary>
         /// This method displays the choices for the user
         /// </summary>
         /// <param name="prompt"></param>
@@ -59,7 +48,7 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void Run()
         {
-            OutputHeading();
+            ConsoleHelper.OutputHeading("BMI Calculator");
             string choice = SelectUnit("Please enter your choice");
             ExecuteChoice(choice);
 
@@ -112,9 +101,19 @@ namespace ConsoleAppProject.App02
         private void OutputBMI()
         {
             Console.WriteLine($"\n Your BMI Index is {Index}");
-            if (Index < 18.50) 
+            //if (Index < 18.50)
+            //if (Normal(18.5 - 24.9)
+            //if (Overweight  25.0 - 29.9 )
+            //if (Obese Class I  30.0 - 34.9 )
+            //if (Obese Class II  35.0 - 39.9 )
+            //if (Obese Class III  >= 40.0 )
             {
                 Console.WriteLine("You are underweight");
+                Console.WriteLine("You are normal weight");
+                Console.WriteLine("You are Overweight");
+                Console.WriteLine("You are Obese type 1");
+                Console.WriteLine("You are Obese type 2");
+                Console.WriteLine("You are Obese type 3");
             }
         }
 
@@ -123,15 +122,11 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void InputMetricValues()
         {
-            Console.Write("please enter your weight in kg");
-            string value = Console.ReadLine();
-            Kilograms = Convert.ToDouble(value);
 
-            Console.Write("please enter your height in centimeters");
-            value = Console.ReadLine();
-            Centimeters = Convert.ToDouble(value);
+            Kilograms = ConsoleHelper.InputNumber(" please enter your weight in kg > ");
+
+            Centimeters = ConsoleHelper.InputNumber(" please enter your height in Centimeters > ");
             Meters = Centimeters / 100;
-
         }
 
         /// <summary>
