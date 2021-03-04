@@ -25,7 +25,9 @@ namespace ConsoleAppProject.App02
 
         //all variables feet,inches,kg,stones,pounds
 
-
+        /// <summary>
+        /// This method outputs the heading for the user
+        /// </summary>
         private void OutputHeading()
         {
             Console.WriteLine();
@@ -35,6 +37,11 @@ namespace ConsoleAppProject.App02
             Console.WriteLine(" -------------------------");
         }
 
+        /// <summary>
+        /// This method displays the choices for the user
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <returns></returns>
         private static string DisplayChoices(string prompt)
         {
             Console.WriteLine();
@@ -47,6 +54,9 @@ namespace ConsoleAppProject.App02
             return choice;
         }
 
+        /// <summary>
+        /// This method runs the application
+        /// </summary>
         public void Run()
         {
             OutputHeading();
@@ -55,6 +65,11 @@ namespace ConsoleAppProject.App02
 
         }
 
+        /// <summary>
+        /// Allows the user to select the unit
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <returns></returns>
         private string SelectUnit(string prompt)
         {
             string choice = DisplayChoices(prompt);
@@ -63,7 +78,12 @@ namespace ConsoleAppProject.App02
             Console.WriteLine($" You have chosen {unit}");
             return unit;
         }
-
+        
+        /// <summary>
+        /// Allows the user to execute the choices
+        /// </summary>
+        /// <param name="choice"></param>
+        /// <returns></returns>
         private string ExecuteChoice(string choice)
         {
             if (choice.Equals("1"))
@@ -85,7 +105,10 @@ namespace ConsoleAppProject.App02
         private void CalculateMetricBMI() => Index = Kilograms / Centimeters * Centimeters;
 
         private void CalculateImperialBMI() => Index = Pounds / Inches * Inches;
-        
+
+        /// <summary>
+        /// This method outputs the BMI
+        /// </summary>
         private void OutputBMI()
         {
             Console.WriteLine($"\n Your BMI Index is {Index}");
@@ -95,6 +118,9 @@ namespace ConsoleAppProject.App02
             }
         }
 
+        /// <summary>
+        /// This method allows the user to input Metric Values
+        /// </summary>
         private void InputMetricValues()
         {
             Console.Write("please enter your weight in kg");
@@ -108,6 +134,9 @@ namespace ConsoleAppProject.App02
 
         }
 
+        /// <summary>
+        /// This method allows the user to input Imperial Values
+        /// </summary>
         private void InputImperialValues()
         {
             Console.Write("please enter your weight in Pounds");
