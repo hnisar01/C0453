@@ -24,6 +24,7 @@ namespace ConsoleAppProject.App02
 
         public double Index { get; set; }
 
+
         //all variables feet,inches,kg,stones,pounds
 
         /// <summary>
@@ -101,19 +102,10 @@ namespace ConsoleAppProject.App02
         private void OutputBMI()
         {
             Console.WriteLine($"\n Your BMI Index is {Index}");
-            //if (Index < 18.50)
-            //if (Normal(18.5 - 24.9)
-            //if (Overweight  25.0 - 29.9 )
-            //if (Obese Class I  30.0 - 34.9 )
-            //if (Obese Class II  35.0 - 39.9 )
-            //if (Obese Class III  >= 40.0 )
+            if (Index < 18.50)
             {
                 Console.WriteLine("You are underweight");
-                Console.WriteLine("You are normal weight");
-                Console.WriteLine("You are Overweight");
-                Console.WriteLine("You are Obese type 1");
-                Console.WriteLine("You are Obese type 2");
-                Console.WriteLine("You are Obese type 3");
+                
             }
         }
 
@@ -134,13 +126,10 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void InputImperialValues()
         {
-            Console.Write("please enter your weight in Pounds");
-            string value = Console.ReadLine();
-            Pounds = Convert.ToDouble(value);
 
-            Console.Write("please enter your height in Inches");
-            value = Console.ReadLine();
-            Inches = Convert.ToDouble(value);
+            Pounds = ConsoleHelper.InputNumber(" please enter your weight in Pounds > ");
+
+            Inches = ConsoleHelper.InputNumber(" please enter your height in Inches > ");
         }
 
         public void OutputMessage()

@@ -18,6 +18,9 @@ namespace ConsoleAppProject.App03
 
         public int[] Maximum { get; set; }
 
+        /// <summary>
+        /// This method shows each students grade profile.
+        /// </summary>
         public StudentGrades()
         {
             Students = new string[]
@@ -30,6 +33,46 @@ namespace ConsoleAppProject.App03
 
             GradeProfile = new int[(int)Grades.A + 1];
             Marks = new int[Students.Length];
+
+        }
+
+        /// <summary>
+        /// This method allows the user to input marks for each student.
+        /// </summary>
+        public void InputMarks()
+        {
+
+        }
+
+        /// <summary>
+        /// This method allows the user to see the marks for each student.
+        /// </summary>
+        public void OutputMarks()
+        {
+
+        }
+
+        /// <summary>
+        /// This method allows marks to be converted to grades.
+        /// </summary>
+        public Grades ConvertToGrade(int mark)
+        {
+            
+        }
+
+        /// <summary>
+        /// This method calculates the stat for each student.
+        /// </summary>
+        public void CalculateStats()
+        {
+
+        }
+
+        /// <summary>
+        /// This method Calculates the Grade Profile
+        /// </summary>
+        public void CalculateGradeProfile()
+        {
 
         }
 
