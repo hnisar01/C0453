@@ -11,6 +11,15 @@ namespace ConsoleAppProject.App02
     /// </author>
     public class BMI
     {
+        public const double UNDERWEIGHT = 18.5;
+        public const double NORMAL = 24.9;
+        public const double OVERWEIGHT = 29.9;
+        public const double OBESE = 34.9;
+        public const double CLASS2 = 39.9;
+        public const double CLASS3 = 40.0;
+
+
+
         public const string Imperial = "Imperial";
         public const string METRIC = "Metric";
 
@@ -92,8 +101,14 @@ namespace ConsoleAppProject.App02
             return null;
         }
 
+        /// <summary>
+        /// This method calculates the Metric BMI
+        /// </summary>
         private void CalculateMetricBMI() => Index = Kilograms / Centimeters * Centimeters;
 
+        /// <summary>
+        /// This method calculates the Imperial BMI
+        /// </summary>
         private void CalculateImperialBMI() => Index = Pounds / Inches * Inches;
 
         /// <summary>
@@ -105,7 +120,28 @@ namespace ConsoleAppProject.App02
             if (Index < 18.50)
             {
                 Console.WriteLine("You are underweight");
-                
+
+
+            }
+            else if (Index >= 18.5 && Index <= 24.6)
+            {
+                Console.WriteLine("You are normal weight");
+            }
+            else if (Index >= 25.0 && Index <= 29.9)
+            {
+                Console.WriteLine("You are overweight");
+            }
+            else if (Index >= 30.0 && Index <= 34.9)
+            {
+                Console.WriteLine("You are obese type 1");
+            }
+            else if (Index >= 35.0 && Index <= 39.9)
+            {
+                Console.WriteLine("You are obese type 2");
+            }
+            else if (Index >= 40.0)
+            {
+                Console.WriteLine("You are obese type 3");
             }
         }
 

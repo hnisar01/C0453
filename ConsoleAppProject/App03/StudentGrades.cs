@@ -4,8 +4,17 @@ using System.Text;
 
 namespace ConsoleAppProject.App03
 {
-    class StudentGrades
+    public class StudentGrades
     {
+        //Constants (Grade Boundaries)
+
+        public const int LowestMark = 0;
+        public const int LowestGradeD = 40;
+        public const int LowestGradeC = 50;
+        public const int LowestGradeB = 60;
+        public const int LowestGradeA = 70;
+        public const int HighestMark = 100;
+
         public string[] Students { get; set; }
 
         public int[] Marks { get; set; }
@@ -49,7 +58,6 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void OutputMarks()
         {
-
         }
 
         /// <summary>
@@ -57,7 +65,13 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public Grades ConvertToGrade(int mark)
         {
-            
+            if (mark >= 0 && mark < LowestGradeD)
+            {
+                return Grades.F;
+            }
+            else return Grades.D;
+
+
         }
 
         /// <summary>
@@ -65,18 +79,53 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void CalculateStats()
         {
+            Minimum = Marks[0];
+            Maximum = Marks[0];
 
+            double total = 0;
+
+            foreach (int mark in Marks)
+            {
+                if (mark > Maximum) Maximum = mark;
+                if (mark < Maximum) Minimum = mark;
+
+                total = total += mark;
+            }
+
+            Mean = total / Marks.Length;
         }
+
 
         /// <summary>
         /// This method Calculates the Grade Profile
         /// </summary>
         public void CalculateGradeProfile()
         {
+            for int(i = 0; i < GradeProfile.Length; i++)
+            {
+                GradeProfile[i] = 0;
+            }
+            foreach (int mark in Marks)
+            {
+                Grade grade = ConvertToGrade(mark);
+                GradeProfile[(int)grade]++;
+            }
 
+            OutputGradeProfile();
+            {
+                Grade grade = Grade.X;
+                Console.WriteLine();
+
+                foreach (int count in GradeProfile)
+                {
+                    int percentage = count * 100 / Marks.Length;
+                    Console.WriteLine($"Grade {grade} {percentage}% Count {count}");
+                    grade++
+                }
+
+                Console.WriteLine();
+            }
         }
-
-
-
+    }
     }
 }
