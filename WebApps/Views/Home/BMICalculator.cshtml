@@ -1,5 +1,46 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model ConsoleAppProject.App02.BmiCalculator
+@(
+   ViewData["Title] = ""BMI Calculator"
+)
+
+
+<header class="jumbotron">
+        <h1>BMI Calculator</h1>
+        <h2>By Hassan Nisar</h2>
+    <p>
+        This app will use your body weight and height
+        to calculate a BMI index. 
+    </p>
+</header>
+<section>
+    <form method="post">
+
+        <h2>Height</h2>
+        <p>
+            Please enter your current height in whole numbers
+            using metric or imperial units
+        </p>
+        <p>
+            <input type="number" placeholders="Feet" />
+            <input type="number" placeholders="Inches" />
+        </p>
+        <p>
+            <input type="number" placeholders="Centimeters" />
+        </p>
+
+        <h2>Weight</h2>
+        <p>
+            Please enter your current weight in whole numbers
+            using metric or imperial units
+        </p>
+        <p>
+            <input type="number" placeholders="Stones" value="" />
+            <input type="number" placeholders="Pounds" value="" />
+        </p>
+        <p>
+            <button class="btn btn-success" type="submit">Calculate</button>
+        </p>
+
+    </form>
+</section>
+        

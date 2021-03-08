@@ -104,10 +104,10 @@ namespace ConsoleApps.Tests
                                 (studentGrades.GradeProfile[1] == 1) &&
                                 (studentGrades.GradeProfile[2] == 1) &&
                                 (studentGrades.GradeProfile[3] == 1) &&
-                                (studentGrades.GradeProfile[4] == 4))) &&;
+                                (studentGrades.GradeProfile[4] == 4)) &&;
 
             //Assert
-            Assert.Istrue(expectedProfile);
+            Assert.IsTrue(expectedProfile);
 
         }
     }

@@ -21,6 +21,8 @@ namespace ConsoleAppProject.App03
 
         public int[] GradeProfile { get; set; }
 
+        public int[] Grade { get; set; }
+
         public double[] Mean { get; set; }
 
         public int[] Minimum { get; set; }
@@ -111,7 +113,7 @@ namespace ConsoleAppProject.App03
                 GradeProfile[(int)grade]++;
             }
 
-            OutputGradeProfile();
+             OutputGradeProfile();
             {
                 Grade grade = Grade.X;
                 Console.WriteLine();
@@ -120,12 +122,12 @@ namespace ConsoleAppProject.App03
                 {
                     int percentage = count * 100 / Marks.Length;
                     Console.WriteLine($"Grade {grade} {percentage}% Count {count}");
-                    grade++
+                    grade++;
                 }
 
                 Console.WriteLine();
             }
         }
     }
-    }
+    
 }

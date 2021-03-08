@@ -31,6 +31,11 @@ namespace ConsoleAppProject.App02
         public double Centimeters { get; set; }
         public double Meters { get; set; }
 
+        public UnitSystems UnitSystems
+        {
+            get => default;
+        }
+
         public double Index { get; set; }
 
 
@@ -171,6 +176,29 @@ namespace ConsoleAppProject.App02
         public void OutputMessage()
         {
         }
+
+        public void CalculateIndex()
+        {
+            ConsoleHelper.OutputHeading("Body Mass Index Calculator");
+
+            UnitSystems unit system = SelectUnit();
+
+            if (UnitSystems == UnitSystems.Metric)
+            {
+                InputMetricDetails();
+                CalculateMetricBMI();
+            }
+            else
+            {
+                InputImperialDetails();
+                CalculateImperialBMI();
+            }
+
+            Console.WriteLine(GetHealthMessage());
+            Console.WriteLine(GetBameMessage());
+
+        }
+
     }
 }
 
