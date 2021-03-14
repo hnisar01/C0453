@@ -1,6 +1,6 @@
-﻿@model ConsoleAppProject.App02.BmiCalculator
+﻿@model ConsoleAppProject.App02.BMI
 @(
-   ViewData["Title] = ""BMI Calculator"
+   ViewData["Title"] = "BMI";
 )
 
 
@@ -21,11 +21,15 @@
             using metric or imperial units
         </p>
         <p>
-            <input type="number" placeholders="Feet" />
-            <input type="number" placeholders="Inches" />
+            <input type="number" placeholders="Feet" 
+                   asp-for="@Model.Feet" />
+            
+            <input type="number" placeholders="Inches"
+                   value="0" asp-for="@Model.Inches" />
         </p>
         <p>
-            <input type="number" placeholders="Centimeters" />
+            <input type="number" placeholders="Centimeters"
+                   asp-for="@Model.Centimeters" />
         </p>
 
         <h2>Weight</h2>
@@ -34,8 +38,15 @@
             using metric or imperial units
         </p>
         <p>
-            <input type="number" placeholders="Stones" value="" />
-            <input type="number" placeholders="Pounds" value="" />
+            <input type="number" placeholders="Stones"
+                   value="11" asp-for=@Model.Stones />
+            
+            <input type="number" placeholders="Pounds"
+                   value="5" asp-for=@Model.Pounds />
+        </p>
+        <p>
+            <input type="number" placeholders="Kilogarms"
+                   asp-for=@Model.Kilograms /> />
         </p>
         <p>
             <button class="btn btn-success" type="submit">Calculate</button>

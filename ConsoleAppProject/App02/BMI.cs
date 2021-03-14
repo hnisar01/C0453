@@ -18,8 +18,6 @@ namespace ConsoleAppProject.App02
         public const double CLASS2 = 39.9;
         public const double CLASS3 = 40.0;
 
-
-
         public const string Imperial = "Imperial";
         public const string METRIC = "Metric";
 
@@ -31,13 +29,7 @@ namespace ConsoleAppProject.App02
         public double Centimeters { get; set; }
         public double Meters { get; set; }
 
-        public UnitSystems UnitSystems
-        {
-            get => default;
-        }
-
         public double Index { get; set; }
-
 
         //all variables feet,inches,kg,stones,pounds
 
@@ -46,6 +38,7 @@ namespace ConsoleAppProject.App02
         /// </summary>
         /// <param name="prompt"></param>
         /// <returns></returns>
+        
         private static string DisplayChoices(string prompt)
         {
             Console.WriteLine();
@@ -63,7 +56,8 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void Run()
         {
-            ConsoleHelper.OutputHeading("BMI Calculator");
+            ConsoleHelper.OutputHeading("BMI Calculator, this is an application which allows users" +
+                "to calculate their BMI using imperial or metric values");
             string choice = SelectUnit("Please enter your choice");
             ExecuteChoice(choice);
 
@@ -82,7 +76,7 @@ namespace ConsoleAppProject.App02
             Console.WriteLine($" You have chosen {unit}");
             return unit;
         }
-        
+
         /// <summary>
         /// Allows the user to execute the choices
         /// </summary>
@@ -125,8 +119,6 @@ namespace ConsoleAppProject.App02
             if (Index < 18.50)
             {
                 Console.WriteLine("You are underweight");
-
-
             }
             else if (Index >= 18.5 && Index <= 24.6)
             {
@@ -173,32 +165,48 @@ namespace ConsoleAppProject.App02
             Inches = ConsoleHelper.InputNumber(" please enter your height in Inches > ");
         }
 
-        public void OutputMessage()
+        public void OutputBAMEMessage()
         {
-        }
-
-        public void CalculateIndex()
-        {
-            ConsoleHelper.OutputHeading("Body Mass Index Calculator");
-
-            UnitSystems unit system = SelectUnit();
-
-            if (UnitSystems == UnitSystems.Metric)
+            Console.WriteLine($"\n Your BMI Index is {Index}");
+            if (Index < 18.50)
             {
-                InputMetricDetails();
-                CalculateMetricBMI();
+                Console.WriteLine("If you are Black, Asian or other minority groups" +
+                    "you have a higher risk Adults 23.0 or more are at " +
+                    "increased risks. Adults 27.5 or more are at a higher risk");
             }
-            else
+            else if (Index >= 18.5 && Index <= 24.6)
             {
-                InputImperialDetails();
-                CalculateImperialBMI();
+                Console.WriteLine("If you are Black, Asian or other minority groups" +
+                    "you have a higher risk Adults 23.0 or more are at " +
+                    "increased risks. Adults 27.5 or more are at a higher risk");
             }
-
-            Console.WriteLine(GetHealthMessage());
-            Console.WriteLine(GetBameMessage());
+            else if (Index >= 25.0 && Index <= 29.9)
+            {
+                Console.WriteLine("If you are Black, Asian or other minority groups" +
+                    "you have a higher risk Adults 23.0 or more are at " +
+                    "increased risks. Adults 27.5 or more are at a higher risk");
+            }
+            else if (Index >= 30.0 && Index <= 34.9)
+            {
+                Console.WriteLine("If you are Black, Asian or other minority groups" +
+                    "you have a higher risk Adults 23.0 or more are at " +
+                    "increased risks. Adults 27.5 or more are at a higher risk");
+            }
+            else if (Index >= 35.0 && Index <= 39.9)
+            {
+                Console.WriteLine("If you are Black, Asian or other minority groups" +
+                    "you have a higher risk Adults 23.0 or more are at " +
+                    "increased risks. Adults 27.5 or more are at a higher risk");
+            }
+            else if (Index >= 40.0)
+            {
+                Console.WriteLine("If you are Black, Asian or other minority groups" +
+                    "you have a higher risk Adults 23.0 or more are at " +
+                    "increased risks. Adults 27.5 or more are at a higher risk");
+            }
 
         }
-
+        
     }
 }
 

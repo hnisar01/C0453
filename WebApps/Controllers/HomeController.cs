@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApps.Models;
+using ConsoleAppProject.App02;
 
 namespace WebApps.Controllers
 {
@@ -22,8 +23,20 @@ namespace WebApps.Controllers
             return View();
         }
 
-
+        [HttpGet]
         public IActionResult BMICalculator()
+        {
+            BMI bmi = new BMI();
+            return View(bmi);
+        }
+
+        [HttpPost]
+        public IActionResult BMICalculator(double index)
+        {
+            return View();
+        }
+
+        public IActionResult HealthMessage()
         {
             return View();
         }

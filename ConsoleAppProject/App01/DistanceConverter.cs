@@ -155,9 +155,6 @@ namespace ConsoleAppProject.App01
 
         }
         
-
-
-
         /// <summary>
         /// Prompt the app to output the distance in feet
         /// </summary>
