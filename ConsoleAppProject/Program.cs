@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -25,9 +26,9 @@ namespace ConsoleAppProject
 
             Console.WriteLine();
             Console.WriteLine($" 1. App01 Distance Converter");
-            Console.WriteLine($" 2. App02");
-            Console.WriteLine($" 3. App03");
-            Console.WriteLine();
+            Console.WriteLine($" 2. App02 BMI");
+            Console.WriteLine($" 3. App03 Student Grades");
+            Console.WriteLine($" 4. App04 Post");
 
             Console.Write("Please select an app > ");
             string choice = Console.ReadLine();
@@ -47,6 +48,10 @@ namespace ConsoleAppProject
             {
                 StudentGrades studentGrades = new StudentGrades();
                 studentGrades.Run();
+            }
+            else if (choice.Equals("4"))
+            {
+ 
             }
 
         }
