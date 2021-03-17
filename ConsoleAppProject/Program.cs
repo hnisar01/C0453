@@ -28,7 +28,7 @@ namespace ConsoleAppProject
             Console.WriteLine($" 1. App01 Distance Converter");
             Console.WriteLine($" 2. App02 BMI");
             Console.WriteLine($" 3. App03 Student Grades");
-            Console.WriteLine($" 4. App04 Post");
+            Console.WriteLine($" 4. App04 Social Network");
 
             Console.Write("Please select an app > ");
             string choice = Console.ReadLine();
@@ -51,8 +51,12 @@ namespace ConsoleAppProject
             }
             else if (choice.Equals("4"))
             {
- 
+                NetworkApp app04 = new NetworkApp();
+                app04.DisplayMenu();
+                
+
             }
+            
 
         }
     }
