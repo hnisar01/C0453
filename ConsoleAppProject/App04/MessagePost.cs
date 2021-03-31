@@ -32,6 +32,9 @@ namespace ConsoleAppProject.App04
           
         }
 
+        /// <summary>
+        /// This method displays a message
+        /// </summary>
         public override void Display()
         {
             Console.WriteLine($" Messsage: {Message}");

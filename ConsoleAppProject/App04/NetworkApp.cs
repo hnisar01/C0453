@@ -10,7 +10,7 @@ namespace ConsoleAppProject.App04
         private NewsFeed news = new NewsFeed();
 
         /// <summary>
-        /// 
+        /// This method displays the menu
         /// </summary>
         public void DisplayMenu()
         {
@@ -39,6 +39,9 @@ namespace ConsoleAppProject.App04
             } while (!wantToQuit);
         }
 
+        /// <summary>
+        /// This method allows the user to post an image
+        /// </summary>
         private void PostImage()
         {
             Console.WriteLine("Please enter your name");
@@ -54,6 +57,9 @@ namespace ConsoleAppProject.App04
             news.AddPhotoPost(photoPost);
         }
 
+        /// <summary>
+        /// This method allows the user to post a message
+        /// </summary>
         private void PostMessage()
         {
             Console.WriteLine("Please enter your name");
@@ -64,6 +70,9 @@ namespace ConsoleAppProject.App04
             news.AddMessagePost(messagePost);
         }
 
+        /// <summary>
+        /// This method allows all posts to be displayed
+        /// </summary>
         private void DisplayAll()
         {
             news.Display();
