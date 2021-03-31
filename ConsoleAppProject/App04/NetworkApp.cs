@@ -41,12 +41,27 @@ namespace ConsoleAppProject.App04
 
         private void PostImage()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Please enter your name");
+            String name = Console.ReadLine();
+            
+            Console.WriteLine("Please enter your filename");
+            String filename = Console.ReadLine();
+            
+            Console.WriteLine("Please enter your caption");
+            String caption = Console.ReadLine();
+            
+            PhotoPost photoPost = new PhotoPost(name, filename, caption);
+            news.AddPhotoPost(photoPost);
         }
 
         private void PostMessage()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Please enter your name");
+            String name = Console.ReadLine();
+            Console.WriteLine("Please enter your message");
+            String message = Console.ReadLine();
+            MessagePost messagePost = new MessagePost(name,message);
+            news.AddMessagePost(messagePost);
         }
 
         private void DisplayAll()

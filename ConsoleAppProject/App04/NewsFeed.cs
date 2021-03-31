@@ -31,10 +31,10 @@ namespace ConsoleAppProject.App04
         {
             posts = new List<Post>();
 
-            MessagePost post = new MessagePost(AUTHOR, "Hello");
+            MessagePost post = new MessagePost(AUTHOR, "Message 1");
             AddMessagePost(post);
 
-            PhotoPost photoPost = new PhotoPost(AUTHOR, "Photo1.jpg", "Hello Again");
+            PhotoPost photoPost = new PhotoPost(AUTHOR, "Photo1.jpg", "Photo post 1");
             AddPhotoPost(photoPost);
         }
 
